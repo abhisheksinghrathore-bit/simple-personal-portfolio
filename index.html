@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abhishek Singh Rathore - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a;
+            background-image: radial-gradient(circle at top right, rgba(121, 69, 236, 0.15), transparent 40%),
+                              radial-gradient(circle at bottom left, rgba(43, 89, 232, 0.15), transparent 50%);
+        }
+        .section-fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .section-fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .glass-card {
+            background: rgba(17, 24, 39, 0.6);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #818cf8, #c084fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gradient-button {
+             background-image: linear-gradient(to right, #4f46e5, #7c3aed);
+        }
+        .gradient-border {
+            border: 1px solid transparent;
+            background-clip: padding-box;
+            border-image: linear-gradient(to bottom right, #4f46e5, #a855f7) 1;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-200">
+
+    <!-- Header & Navigation -->
+    <header id="header" class="bg-black/50 backdrop-blur-sm fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0">
+                    <a href="#home" class="text-2xl font-bold text-white">Abhishek<span class="text-indigo-400">.</span></a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#home" class="text-gray-300 hover:text-indigo-300 px-3 py-2 rounded-md text-sm font-medium transition-colors">Home</a>
+                        <a href="#about" class="text-gray-300 hover:text-indigo-300 px-3 py-2 rounded-md text-sm font-medium transition-colors">About</a>
+                        <a href="#skills" class="text-gray-300 hover:text-indigo-300 px-3 py-2 rounded-md text-sm font-medium transition-colors">Skills</a>
+                        <a href="#projects" class="text-gray-300 hover:text-indigo-300 px-3 py-2 rounded-md text-sm font-medium transition-colors">Projects</a>
+                        <a href="#education" class="text-gray-300 hover:text-indigo-300 px-3 py-2 rounded-md text-sm font-medium transition-colors">Education</a>
+                        <a href="#contact" class="gradient-button text-white hover:opacity-90 px-4 py-2 rounded-md text-sm font-medium transition-opacity">Contact</a>
+                    </div>
+                </div>
+                <div class="-mr-2 flex md:hidden">
+                    <button id="mobile-menu-button" type="button" class="bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <i data-lucide="menu" class="block h-6 w-6"></i>
+                        <i data-lucide="x" class="hidden h-6 w-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-gray-900/90">
+                <a href="#home" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="#about" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">About</a>
+                <a href="#skills" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Skills</a>
+                <a href="#projects" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Projects</a>
+                <a href="#education" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Education</a>
+                <a href="#contact" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="min-h-screen flex items-center pt-16">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="text-5xl md:text-7xl font-extrabold text-white leading-tight mb-4">
+                    Hi, I'm <span class="gradient-text">Abhishek Singh Rathore</span>
+                </h1>
+                <p class="text-lg md:text-xl text-gray-300 font-medium mb-8 max-w-3xl mx-auto">
+                    A final-year Computer Science Student specializing in Cyber Security and building secure, user-friendly web applications.
+                </p>
+                <div class="flex justify-center items-center flex-wrap gap-4">
+                    <a href="#projects" class="gradient-button text-white font-semibold px-8 py-3 rounded-md hover:opacity-90 transition-opacity duration-300 transform hover:scale-105">View My Work</a>
+                    <a href="#contact" class="bg-gray-700 text-white font-semibold px-8 py-3 rounded-md hover:bg-gray-600 transition duration-300 flex items-center transform hover:scale-105">
+                        <i data-lucide="mail" class="w-5 h-5 mr-2"></i> Get in Touch
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 sm:py-32 section-fade-in">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-white">About Me</h2>
+                    <p class="gradient-text font-semibold mt-2">My Journey in Tech</p>
+                </div>
+                <div class="max-w-4xl mx-auto glass-card p-8 md:p-12 rounded-2xl">
+                    <p class="text-lg text-gray-300 leading-relaxed">
+                        I am a passionate and driven final-year Computer Science and Engineering student specializing in Cyber Security. With a strong foundation in software engineering, web development, and database management, I am adept at building secure, scalable, and user-friendly applications while keeping security at the forefront.
+                    </p>
+                    <p class="mt-4 text-lg text-gray-300 leading-relaxed">
+                        Proficient in both frontend and backend development, I am always eager to learn, adapt, and apply my skills to real-world projects that make a meaningful impact. My goal is to leverage my problem-solving abilities and technical expertise to contribute to innovative and secure technology solutions.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-20 sm:py-32 section-fade-in">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-white">Technical Skills</h2>
+                    <p class="gradient-text font-semibold mt-2">My Digital Toolbox</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="glass-card p-6 rounded-xl transition-all duration-300 hover:border-indigo-500/50 hover:shadow-2xl hover:shadow-indigo-500/10">
+                        <h3 class="text-xl font-semibold text-white mb-4 flex items-center"><i data-lucide="code-2" class="w-6 h-6 mr-3 text-indigo-400"></i>Languages</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-indigo-600/30 text-indigo-200 px-3 py-1 rounded-full text-sm">C/C++</span>
+                            <span class="bg-indigo-600/30 text-indigo-200 px-3 py-1 rounded-full text-sm">Python</span>
+                            <span class="bg-indigo-600/30 text-indigo-200 px-3 py-1 rounded-full text-sm">SQL</span>
+                        </div>
+                    </div>
+                    <div class="glass-card p-6 rounded-xl transition-all duration-300 hover:border-indigo-500/50 hover:shadow-2xl hover:shadow-indigo-500/10">
+                        <h3 class="text-xl font-semibold text-white mb-4 flex items-center"><i data-lucide="layout-template" class="w-6 h-6 mr-3 text-indigo-400"></i>Frontend</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-indigo-600/30 text-indigo-200 px-3 py-1 rounded-full text-sm">HTML</span>
+                            <span class="bg-indigo-600/30 text-indigo-200 px-3 py-1 rounded-full text-sm">CSS</span>
+                            <span class="bg-indigo-600/30 text-indigo-200 px-3 py-1 rounded-full text-sm">JavaScript</span>
+                        </div>
+                    </div>
+                    <div class="glass-card p-6 rounded-xl transition-all duration-300 hover:border-indigo-500/50 hover:shadow-2xl hover:shadow-indigo-500/10">
+                        <h3 class="text-xl font-semibold text-white mb-4 flex items-center"><i data-lucide="server" class="w-6 h-6 mr-3 text-indigo-400"></i>Backend</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-indigo-600/30 text-indigo-200 px-3 py-1 rounded-full text-sm">React.js</span>
+                            <span class="bg-indigo-600/30 text-indigo-200 px-3 py-1 rounded-full text-sm">Next.js</span>
+                            <span class="bg-indigo-600/30 text-indigo-200 px-3 py-1 rounded-full text-sm">Node.js</span>
+                            <span class="bg-indigo-600/30 text-indigo-200 px-3 py-1 rounded-full text-sm">Express.js</span>
+                        </div>
+                    </div>
+                    <div class="glass-card p-6 rounded-xl transition-all duration-300 hover:border-indigo-500/50 hover:shadow-2xl hover:shadow-indigo-500/10">
+                        <h3 class="text-xl font-semibold text-white mb-4 flex items-center"><i data-lucide="database" class="w-6 h-6 mr-3 text-indigo-400"></i>Databases</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-indigo-600/30 text-indigo-200 px-3 py-1 rounded-full text-sm">MySQL</span>
+                            <span class="bg-indigo-600/30 text-indigo-200 px-3 py-1 rounded-full text-sm">MongoDB</span>
+                        </div>
+                    </div>
+                    <div class="glass-card p-6 rounded-xl transition-all duration-300 hover:border-indigo-500/50 hover:shadow-2xl hover:shadow-indigo-500/10">
+                        <h3 class="text-xl font-semibold text-white mb-4 flex items-center"><i data-lucide="shield-check" class="w-6 h-6 mr-3 text-indigo-400"></i>Core Competencies</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-indigo-600/30 text-indigo-200 px-3 py-1 rounded-full text-sm">Data Structures & Algorithms</span>
+                            <span class="bg-indigo-600/30 text-indigo-200 px-3 py-1 rounded-full text-sm">DBMS</span>
+                            <span class="bg-indigo-600/30 text-indigo-200 px-3 py-1 rounded-full text-sm">Operating Systems</span>
+                        </div>
+                    </div>
+                    <div class="glass-card p-6 rounded-xl transition-all duration-300 hover:border-indigo-500/50 hover:shadow-2xl hover:shadow-indigo-500/10">
+                        <h3 class="text-xl font-semibold text-white mb-4 flex items-center"><i data-lucide="terminal-square" class="w-6 h-6 mr-3 text-indigo-400"></i>Tools & Platforms</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-indigo-600/30 text-indigo-200 px-3 py-1 rounded-full text-sm">GitHub</span>
+                            <span class="bg-indigo-600/30 text-indigo-200 px-3 py-1 rounded-full text-sm">VS Code</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-20 sm:py-32 section-fade-in">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-white">Projects</h2>
+                    <p class="gradient-text font-semibold mt-2">Creations I'm Proud Of</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="glass-card rounded-xl overflow-hidden group">
+                        <img src="https://placehold.co/600x400/111827/a78bfa?text=Telly+Beans" alt="Telly Beans Project" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-white mb-2">Telly Beans</h3>
+                            <p class="text-gray-400 mb-4 text-sm">A web-based food ordering platform with real-time tracking and secure payments. Optimized order processing by 40%.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-gray-700 text-gray-300 px-2 py-1 rounded text-xs">React.js</span>
+                                <span class="bg-gray-700 text-gray-300 px-2 py-1 rounded text-xs">Node.js</span>
+                                <span class="bg-gray-700 text-gray-300 px-2 py-1 rounded text-xs">MongoDB</span>
+                            </div>
+                            <div class="flex space-x-4 mt-4">
+                                <a href="#" class="text-indigo-400 hover:text-indigo-300 font-medium flex items-center text-sm">Live Demo <i data-lucide="arrow-up-right" class="w-4 h-4 ml-1"></i></a>
+                                <a href="#" class="text-indigo-400 hover:text-indigo-300 font-medium flex items-center text-sm">Source Code <i data-lucide="github" class="w-4 h-4 ml-1"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="glass-card rounded-xl overflow-hidden group">
+                        <img src="https://placehold.co/600x400/111827/818cf8?text=Park+Here" alt="Park Here Project" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-white mb-2">Park Here</h3>
+                            <p class="text-gray-400 mb-4 text-sm">A web-based parking management solution to address urban parking challenges. Reduced parking congestion by 30%.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-gray-700 text-gray-300 px-2 py-1 rounded text-xs">HTML/CSS</span>
+                                <span class="bg-gray-700 text-gray-300 px-2 py-1 rounded text-xs">JavaScript</span>
+                                <span class="bg-gray-700 text-gray-300 px-2 py-1 rounded text-xs">Node.js</span>
+                            </div>
+                            <div class="flex space-x-4 mt-4">
+                                <a href="#" class="text-indigo-400 hover:text-indigo-300 font-medium flex items-center text-sm">Live Demo <i data-lucide="arrow-up-right" class="w-4 h-4 ml-1"></i></a>
+                                <a href="#" class="text-indigo-400 hover:text-indigo-300 font-medium flex items-center text-sm">Source Code <i data-lucide="github" class="w-4 h-4 ml-1"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="py-20 sm:py-32 section-fade-in">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-white">Education</h2>
+                    <p class="gradient-text font-semibold mt-2">My Academic Background</p>
+                </div>
+                <div class="max-w-3xl mx-auto space-y-6">
+                    <div class="glass-card p-6 rounded-xl">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="text-xl font-semibold text-white">Pranveer Singh Institute of Technology</h3>
+                                <p class="text-indigo-300">B.Tech in Computer Science (Cyber Security)</p>
+                            </div>
+                            <p class="text-gray-400 text-sm flex-shrink-0 ml-4">2022 - 2026</p>
+                        </div>
+                    </div>
+                    <div class="glass-card p-6 rounded-xl">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="text-xl font-semibold text-white">Army Public School, Kanpur</h3>
+                                <p class="text-indigo-300">XII (PCM) & X</p>
+                            </div>
+                            <p class="text-gray-400 text-sm flex-shrink-0 ml-4">2019 - 2021</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 sm:py-32 section-fade-in">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-white">Get In Touch</h2>
+                    <p class="gradient-text font-semibold mt-2">Let's Build Something Amazing Together</p>
+                </div>
+                <div class="max-w-xl mx-auto text-center">
+                    <p class="text-lg text-gray-300 mb-8">
+                        I'm currently open to new opportunities and collaborations. Feel free to reach out—I'm always excited to discuss new projects, creative ideas, or how I can contribute to your team.
+                    </p>
+                    <div class="glass-card rounded-xl p-6 inline-flex items-center space-x-4 mb-8">
+                        <i data-lucide="mail" class="w-6 h-6 text-indigo-300"></i>
+                        <span id="email-text" class="text-lg text-gray-200">abhisheksinghrathore719@gmail.com</span>
+                        <button id="copy-email-button" class="p-2 rounded-md hover:bg-gray-700 transition-colors">
+                            <i data-lucide="copy" class="w-5 h-5 text-gray-400"></i>
+                        </button>
+                    </div>
+                    <div id="copy-success-message" class="text-green-400 text-sm mt-2 mb-8" style="display: none;">
+                        Email address copied to clipboard!
+                    </div>
+                     <a href="mailto:abhisheksinghrathore719@gmail.com" class="gradient-button text-white font-semibold px-8 py-4 rounded-md hover:opacity-90 transition-opacity duration-300 text-lg inline-block transform hover:scale-105">
+                       Send me an Email
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-transparent mt-20">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-6 border-t border-gray-800">
+            <div class="flex flex-col sm:flex-row justify-between items-center">
+                <p class="text-gray-500 text-sm">&copy; 2025 Abhishek Singh Rathore. All rights reserved.</p>
+                <div class="flex space-x-4 mt-4 sm:mt-0">
+                    <a href="https://www.linkedin.com/in/abhishek-singh-rathore-5567b331a" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-indigo-400 transition-colors">
+                        <i data-lucide="linkedin" class="w-5 h-5"></i>
+                    </a>
+                    <a href="#" class="text-gray-500 hover:text-indigo-400 transition-colors">
+                         <i data-lucide="github" class="w-5 h-5"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = mobileMenuButton.querySelector('[data-lucide="menu"]');
+        const closeIcon = mobileMenuButton.querySelector('[data-lucide="x"]');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            menuIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+        });
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('hidden');
+                closeIcon.classList.add('hidden');
+            });
+        });
+        
+        // Header shadow on scroll
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 10) {
+                header.classList.add('shadow-lg', 'shadow-black/20');
+            } else {
+                header.classList.remove('shadow-lg', 'shadow-black/20');
+            }
+        });
+
+        // Section fade-in animation
+        const sections = document.querySelectorAll('.section-fade-in');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        sections.forEach(section => observer.observe(section));
+
+        // Copy email functionality
+        const copyEmailButton = document.getElementById('copy-email-button');
+        const emailText = document.getElementById('email-text').innerText;
+        const successMessage = document.getElementById('copy-success-message');
+
+        copyEmailButton.addEventListener('click', () => {
+            const tempTextArea = document.createElement('textarea');
+            tempTextArea.value = emailText;
+            document.body.appendChild(tempTextArea);
+            tempTextArea.select();
+            try {
+                document.execCommand('copy');
+                successMessage.style.display = 'block';
+                setTimeout(() => {
+                    successMessage.style.display = 'none';
+                }, 2000);
+            } catch (err) {
+                console.error('Failed to copy text: ', err);
+            }
+            document.body.removeChild(tempTextArea);
+        });
+    </script>
+</body>
+</html>
